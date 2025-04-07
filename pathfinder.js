@@ -1,5 +1,5 @@
 const findPath = (map, start, destination) => {
-  const toKey = ([y, x]) => `${y}:${x}`;
+  const toKey = ([x, y]) => `${x}:${y}`;
 
   const queue = [];
   const directionModifiers = [
@@ -21,10 +21,10 @@ const findPath = (map, start, destination) => {
     const mods = Object.values(directionModifiers);
 
     for (const [Ymod, Xmod] of mods) {
-      const [originY, originX] = point;
+      const [originX, originY] = point;
       const x = originX + Xmod;
       const y = originY + Ymod;
-      const neighborPoint = [y, x];
+      const neighborPoint = [x, y];
       const neighborKey = toKey(neighborPoint);	    
 
       if (x < 0 || y < 0) {
