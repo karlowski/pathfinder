@@ -51,7 +51,7 @@ const findPath = (map, start, destination) => {
   }
 
   if (!parentPoints[destinationKey]) {
-    return [];
+    return null;
   }
 
   const path = [];
